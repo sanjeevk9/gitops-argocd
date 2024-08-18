@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: copy-solar-system
+  name: copy-solar-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: copy-solar-system
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: copy-solar-system
+    spec:
+      containers:
+      - image: siddharth67/solar-system:v6
+        name: copy-solar-system
+        imagePullPolicy: Always
+        ports: 
+        - containerPort: 80

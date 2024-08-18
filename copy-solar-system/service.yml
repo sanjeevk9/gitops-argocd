@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: copy-solar-system
+  name: copy-solar-system-service
+spec:
+  ports:
+  - port: 80 #change to 80
+    protocol: TCP
+    targetPort: 80 #change to 80
+    nodePort: 30333
+  selector:
+    app: copy-solar-system
+  type: NodePort
